@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../models/note_model.dart';
+import '../models/note/note_model.dart';
 
 class NoteRemoteDataSource {
   static const String apiUrl = 'https://jsonplaceholder.typicode.com/posts';
