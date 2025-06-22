@@ -1,3 +1,13 @@
+## Screenshots
+
+| Login                | Product List         |
+|----------------------|---------------------|
+| <img src="overview/login.png" width="250"/> | <img src="overview/product.png" width="250"/> |
+
+| Notes List           | Edit Note           |
+|----------------------|---------------------|
+| <img src="overview/note.png" width="250"/> | <img src="overview/editnote.png" width="250"/> |
+
 # Flutter Clean Architecture App
 
 A Flutter app built with GetX and clean architecture, featuring:
@@ -138,15 +148,7 @@ flutter run -d <device_id>
 - [Flutter: Build and release an Android app](https://docs.flutter.dev/deployment/android)
 - [Flutter: Build and release an iOS app](https://docs.flutter.dev/deployment/ios)
 
-## Screenshots
 
-| Login                | Product List         |
-|----------------------|---------------------|
-| ![Login](overview/login.png) | ![Product](overview/product.png) |
-
-| Notes List           | Edit Note           |
-|----------------------|---------------------|
-| ![Notes](overview/note.png)  | ![Edit Note](overview/editnote.png) |
 
 ## License
 
