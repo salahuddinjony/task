@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'presentation/screens/login/login_screen.dart';
 import 'presentation/controllers/theme_controller.dart';
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           ),
           themeMode: themeController.themeMode.value,
           home: LoginScreen(),
+          builder: EasyLoading.init(),
         ));
   }
 }

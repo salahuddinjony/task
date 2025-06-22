@@ -1,6 +1,6 @@
 import '../entities/note.dart';
 import '../repositories/note_repository.dart';
-
+ 
 class SyncNoteUseCase {
   final NoteRepository repository;
   SyncNoteUseCase(this.repository);
