@@ -53,7 +53,7 @@ class NoteListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notes'),
+        // title: const Text('Notes'),
         actions: [
           IconButton(
             icon: const Icon(Icons.sync),

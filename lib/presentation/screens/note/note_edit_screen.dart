@@ -30,7 +30,10 @@ class NoteEditController extends GetxController {
 
 class NoteEditScreen extends StatelessWidget {
   final Note? note;
-  NoteEditScreen({Key? key, this.note}) : super(key: key);
+  final NoteEditController editController = Get.put(NoteEditController());
+  NoteEditScreen({Key? key, this.note}) : super(key: key) {
+    editController.setNote(note);
+  }
 
   final List<Color> colors = [
     Colors.amber,
@@ -46,8 +49,6 @@ class NoteEditScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final editController = Get.put(NoteEditController());
-    editController.setNote(note);
     final noteController = Get.find<NoteController>();
     final _formKey = GlobalKey<FormState>();
     return Scaffold(
@@ -72,15 +73,15 @@ class NoteEditScreen extends StatelessWidget {
                 validator: (v) => v == null || v.trim().isEmpty ? 'Content required' : null,
               ),
               const SizedBox(height: 16),
-              Obx(() => SizedBox(
-                    height: 40,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: colors.length,
-                      separatorBuilder: (_, __) => const SizedBox(width: 8),
-                      itemBuilder: (context, i) {
-                        final color = colors[i];
-                        return GestureDetector(
+              SizedBox(
+                height: 40,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: colors.length,
+                  separatorBuilder: (_, __) => const SizedBox(width: 8),
+                  itemBuilder: (context, i) {
+                    final color = colors[i];
+                    return Obx(() => GestureDetector(
                           onTap: () => editController.selectedColor.value = color.value,
                           child: CircleAvatar(
                             backgroundColor: color,
@@ -88,10 +89,10 @@ class NoteEditScreen extends StatelessWidget {
                                 ? const Icon(Icons.check, color: Colors.white)
                                 : null,
                           ),
-                        );
-                      },
-                    ),
-                  )),
+                        ));
+                  },
+                ),
+              ),
               const SizedBox(height: 24),
               SizedBox(
                 width: double.infinity,

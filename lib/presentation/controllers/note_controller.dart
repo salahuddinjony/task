@@ -37,6 +37,7 @@ class NoteController extends GetxController {
       error.value = '';
       notes.value = await getNotesUseCase();
     } catch (e) {
+      print('Error loading notes: $e');
       error.value = 'Failed to load notes';
     } finally {
       isLoading.value = false;
