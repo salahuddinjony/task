@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../models/note_model.dart';
+import '../models/note/note_model.dart';
 
 class NoteLocalDataSource {
   static const String notesKey = 'notes';

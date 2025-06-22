@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'presentation/screens/login/login_screen.dart';
-import 'presentation/controllers/theme_controller.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'features/task1_login/screen/login_screen.dart';
+import 'features/home/controller/theme_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           ),
           themeMode: themeController.themeMode.value,
           home: LoginScreen(),
+          builder: EasyLoading.init(),
         ));
   }
 }

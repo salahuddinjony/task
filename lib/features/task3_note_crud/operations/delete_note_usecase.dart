@@ -1,0 +1,7 @@
+import '../../../data/models/note/note_repository.dart';
+ 
+class DeleteNoteUseCase {
+  final NoteRepository repository;
+  DeleteNoteUseCase(this.repository);
+  Future<void> call(int id) async => repository.deleteNote(id);
+} 
