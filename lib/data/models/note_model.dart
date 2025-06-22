@@ -38,4 +38,20 @@ class NoteModel extends HiveObject {
         color: color,
         isSynced: isSynced,
       );
+
+  factory NoteModel.fromJson(Map<String, dynamic> json) => NoteModel(
+        id: json['id'],
+        title: json['title'],
+        content: json['content'],
+        color: json['color'],
+        isSynced: json['isSynced'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'title': title,
+        'content': content,
+        'color': color,
+        'isSynced': isSynced,
+      };
 } 
